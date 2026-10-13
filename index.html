@@ -18,107 +18,7 @@
 <script>
 const $=s=>document.querySelector(s);
 const navItems=[['dashboard','▦','Genel Bakış'],['contracts','▤','Kontratlar'],['tasks','✓','İş Takibi'],['notes','✎','Notlar'],['partners','♙','Operatörler'],['stopsales','⛔','Stop-sale'],['incoming','✉','Gelen Dosyalar'],['admin','⚙','Yönetim']];
-const seed={
- contracts:[
-{id:1,hotel:"EFTALIA AQUA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:2,hotel:"EFTALIA OCEAN",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:3,hotel:"EFTALIA VILLAGE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:4,hotel:"GRAND SEKER",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:5,hotel:"ROMA BEACH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:6,hotel:"SIDE SU HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:7,hotel:"ROYAL ATLANTİS RESORT SPA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:8,hotel:"ROYAL ATLANTIS ICON",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:9,hotel:"DREAM FUN WORLD",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:10,hotel:"DREAM WATER WORLD",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:11,hotel:"DREAM WORLD AQUA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:12,hotel:"ORANGE PALACE SPA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:13,hotel:"THRONE BEACH SIDE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:14,hotel:"ALERIA BELPORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:15,hotel:"BESO HOTEL BERKE RANCH &NATURE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:16,hotel:"BEST WESTERN PLUS KHAN",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:17,hotel:"BEST WESTERN VIP ANTALYA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:18,hotel:"BIRDIE REMI HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:19,hotel:"GRAND BARHAN HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:20,hotel:"ARES DREAM",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:21,hotel:"BELENLI RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:22,hotel:"BELPOINT BEACH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:23,hotel:"SUN STAR RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:24,hotel:"SUN STAR BEACH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:25,hotel:"BIENO CLUB SVS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:26,hotel:"SULTAN SIPAHI",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:27,hotel:"WIEN STAR HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:28,hotel:"INCEKUM WEST HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:29,hotel:"KLEOPATRA MICADOR HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:30,hotel:"HAWAII SUITE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:31,hotel:"MESUT HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:32,hotel:"OJI BEACH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:33,hotel:"XANADU RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:34,hotel:"ADALYA ELITE LARA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:35,hotel:"SEVEN SEAS HOTEL LIFE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:36,hotel:"GREENWOOD SUITES LARA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:37,hotel:"MARVIDA FAMILY ECO",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:38,hotel:"BELCONTI RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:39,hotel:"CLUB SIDAR",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:40,hotel:"MANDARIN RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:41,hotel:"INFINITY BY YELKEN",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:42,hotel:"VENOSA BEACH RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:43,hotel:"RICHMOND EPHESUS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:44,hotel:"BABAYLON HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:45,hotel:"GRAND BLUE SKY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:46,hotel:"ANADOLU HOTELS DIDIM CLUB",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:47,hotel:"CLUB RESORT ATLANTIS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:48,hotel:"DOGAN BEACH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:49,hotel:"DOGAN PARADISE BEACH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:50,hotel:"TUSAN BEACH RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:51,hotel:"ARIA CLAROS BEACH RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:52,hotel:"AGAYA BODRUM ADULT ONLY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:53,hotel:"AGAYA DIDIM RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:54,hotel:"BEKS PREMIUM RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:55,hotel:"KADIKALE RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:56,hotel:"CHARISMA DELUXE HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:57,hotel:"DUQQAN DELUXE RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:58,hotel:"HOTEL BY KARAASLAN INN",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:59,hotel:"YASMIN BODRUM RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:60,hotel:"LIBERTY KUSADASI",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:61,hotel:"LA QUINTA BY WYNDHAM BODRUM",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:62,hotel:"FLORA GARDEN EPHESUS HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:63,hotel:"OMER PRIME HOLIDAY RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:64,hotel:"XANADU ISLAND",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:65,hotel:"AQUA FANTASY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:66,hotel:"FANTASIA DE LUXE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:67,hotel:"CLUB MARCO POLO",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:68,hotel:"GLORIA GOLF RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:69,hotel:"GLORIA VERDE RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:70,hotel:"GLORIA SERENITY RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:71,hotel:"LAREN FAMILY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:72,hotel:"HILTON DALAMAN SARIGERME",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:73,hotel:"INNVISTA HOTELS BELEK",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:74,hotel:"KLEOPATRA SUN LIGHT HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:75,hotel:"KLEOPATRA FATIH",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:76,hotel:"ALP PASA",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:77,hotel:"ELEGANCE EAST",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:78,hotel:"ARES BLUE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:79,hotel:"ARES CITY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:80,hotel:"GRAND VIKING",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:81,hotel:"SIDE STORY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:82,hotel:"LAVITAS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:83,hotel:"RIOLAVITAS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:84,hotel:"SEHER RESORT",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:85,hotel:"SEHER SUN PALACE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:86,hotel:"SEHER KUMKOY STAR",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:87,hotel:"ALBA ROYAL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:88,hotel:"INVISTA BELEK",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:89,hotel:"SEHER SIDE QUALITY",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:90,hotel:"CLUB BAYAR HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:91,hotel:"THE SENSE DELUXE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:92,hotel:"ROYAL WINGS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:93,hotel:"ROYAL SEGINUS",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:94,hotel:"MARDAN PALACE",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:95,hotel:"CELAL SULTAN HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:96,hotel:"VIKING STAR",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''},
-{id:97,hotel:"JADORA DELUXE HOTEL",room:'',operator:'',supplier:'',price:0,discount:'',status:'Kontrol',received:'Bekleniyor',website:'',note:''}],
- tasks:[],notes:[],partners:[],stopsales:[],inbox:[]
-};
+const seed={contracts:[],tasks:[],notes:[],partners:[],stopsales:[],inbox:[]};
 const emptyData=()=>({contracts:[],tasks:[],notes:[],partners:[],stopsales:[],inbox:[]});
 const clone=o=>JSON.parse(JSON.stringify(o));
 let users=JSON.parse(localStorage.getItem('ispusula_users')||'null');
@@ -129,9 +29,10 @@ let currentUser=null;let activeWorkspaceId=localStorage.getItem('ispusula_active
 let data;
 try{data=JSON.parse(localStorage.getItem('ispusula_ws_'+activeWorkspaceId))||JSON.parse(localStorage.getItem('ispusula_data'))||clone(seed)}catch(e){data=clone(seed)}
 if(!Array.isArray(data.contracts))data.contracts=[];
+// Eski sürümde otomatik eklenen 1-97 numaralı örnek otel kayıtlarını kaldır; kullanıcının sonradan eklediği kayıtları koru.
+data.contracts=data.contracts.filter(c=>!(Number(c.id)>=1&&Number(c.id)<=97));
 for(const k of ['tasks','notes','partners','stopsales','inbox'])if(!Array.isArray(data[k]))data[k]=[];
-const known=new Set(data.contracts.map(c=>String(c.hotel||'').trim().toLocaleLowerCase('tr-TR')));let nid=Math.max(0,...data.contracts.map(c=>Number(c.id)||0))+1;
-seed.contracts.forEach(c=>{let k=c.hotel.trim().toLocaleLowerCase('tr-TR');if(!known.has(k)){data.contracts.push({...c,id:nid++});known.add(k)}});
+
 let page='dashboard';
 const save=()=>{localStorage.setItem('ispusula_ws_'+activeWorkspaceId,JSON.stringify(data));localStorage.setItem('ispusula_data',JSON.stringify(data));localStorage.setItem('ispusula_active_workspace',activeWorkspaceId)};
 function persistUsers(){localStorage.setItem('ispusula_users',JSON.stringify(users))}
@@ -153,10 +54,10 @@ function initNav(){for(const id of ['sideNav','bottomNav'])$('#'+id).innerHTML=n
 function setPage(p){page=p;initNav();render()}
 function heading(t,d,button=''){return `<div class="heading"><div><h1>${t}</h1><p>${d}</p></div>${button}</div>`}
 function stat(l,v,f){return `<div class="stat"><span class="label">${l}</span><strong>${v}</strong><small>${f}</small></div>`}
-function dashboard(){let pending=data.tasks.filter(x=>x.status!=='Tamamlandı');let notin=data.contracts.filter(x=>x.received!=='Geldi');let soon=data.contracts.filter(x=>days(x.discount)>=0&&days(x.discount)<=14);
-return heading('Genel Bakış','Bugün takip etmen gerekenler',`<button class="primary" onclick="openModal('task')">＋ İş ekle</button>`)+`<div class="stats">${stat('Toplam kontrat',data.contracts.length,'Kayıtlı otel kontratı')}${stat('Bekleyen işler',pending.length,'Tamamlanması gereken')}${stat('Gelmemiş kontrat',notin.length,'Geldi durumuna alınmamış')}${stat('Yaklaşan bitiş',soon.length,'14 gün içinde')}</div><div class="grid2"><section class="panel"><h2>Kontratların geliş durumu</h2>${data.contracts.length?data.contracts.map(c=>`<div class="barrow"><span>${esc(c.hotel)}</span><div class="bar"><span style="width:${c.received==='Geldi'?100:c.received==='Bekleniyor'?55:15}%"></span></div><span class="pill ${c.received==='Geldi'?'':c.received==='Bekleniyor'?'warn':'bad'}">${esc(c.received)}</span></div>`).join(''):'<div class="empty">Kontrat eklenmedi.</div>'}</section><section class="panel"><h2>Bekleyen işler</h2>${pending.length?pending.slice(0,5).map(t=>`<div class="notice"><strong>${esc(t.title)}</strong><small>${esc(t.supplier||'Tedarikçi belirtilmedi')} · Son tarih: ${dateTR(t.due)}</small><div style="margin-top:7px"><button class="action" onclick="editItem('tasks',${t.id})">Aç / düzenle</button><button class="action" onclick="completeTask(${t.id})">Tamamlandı</button></div></div>`).join(''):'<div class="empty">Bekleyen iş yok.</div>'}</section></div><section class="panel" style="margin-top:13px"><h2>Hızlı işlemler</h2><div class="toolbar"><button class="secondary" onclick="openModal('contract')">＋ Kontrat ekle</button><button class="secondary" onclick="openModal('note')">＋ Not yaz</button><button class="secondary" onclick="document.getElementById('importFile').click()">⇧ Kontrat listesi aktar</button><input id="importFile" type="file" accept=".csv,.json,.txt" class="hidden" onchange="importFile(this)"><button class="secondary" onclick="setPage('partners')">Operatör web sayfaları</button></div><p class="muted" style="font-size:12px">Kontrat listelerini CSV veya JSON dosyasından aktarabilirsin. İlk satırda otel, oda, operatör, tedarikçi, fiyat, indirim bitişi, geliş durumu ve web sitesi gibi sütun adları bulunabilir.</p></section>`}
+function dashboard(){let pending=data.tasks.filter(x=>x.status!=='Tamamlandı');let notin=data.contracts.filter(x=>!['Geldi','Tamamlandı'].includes(x.received));let soon=data.contracts.filter(x=>days(x.discount)>=0&&days(x.discount)<=14);
+return heading('Genel Bakış','Bugün takip etmen gerekenler',`<button class="primary" onclick="openModal('task')">＋ İş ekle</button>`)+`<div class="stats">${stat('Toplam kontrat',data.contracts.length,'Kayıtlı otel kontratı')}${stat('Bekleyen işler',pending.length,'Tamamlanması gereken')}${stat('Gelmemiş kontrat',notin.length,'Geldi durumuna alınmamış')}${stat('Yaklaşan bitiş',soon.length,'14 gün içinde')}</div><div class="grid2"><section class="panel"><h2>Kontratların geliş durumu</h2>${data.contracts.length?data.contracts.map(c=>`<div class="barrow"><span>${esc(c.hotel)}</span><div class="bar"><span style="width:${['Geldi','Tamamlandı'].includes(c.received)?100:c.received==='Bekleniyor'?55:15}%"></span></div><span class="pill ${['Geldi','Tamamlandı'].includes(c.received)?'':c.received==='Bekleniyor'?'warn':'bad'}">${esc(c.received)}</span></div>`).join(''):'<div class="empty">Kontrat eklenmedi.</div>'}</section><section class="panel"><h2>Bekleyen işler</h2>${pending.length?pending.slice(0,5).map(t=>`<div class="notice"><strong>${esc(t.title)}</strong><small>${esc(t.supplier||'Tedarikçi belirtilmedi')} · Son tarih: ${dateTR(t.due)}</small><div style="margin-top:7px"><button class="action" onclick="editItem('tasks',${t.id})">Aç / düzenle</button><button class="action" onclick="completeTask(${t.id})">Tamamlandı</button></div></div>`).join(''):'<div class="empty">Bekleyen iş yok.</div>'}</section></div><section class="panel" style="margin-top:13px"><h2>Hızlı işlemler</h2><div class="toolbar"><button class="secondary" onclick="openModal('contract')">＋ Kontrat ekle</button><button class="secondary" onclick="openModal('note')">＋ Not yaz</button><button class="secondary" onclick="document.getElementById('importFile').click()">⇧ Kontrat listesi aktar</button><input id="importFile" type="file" accept=".csv,.json,.txt" class="hidden" onchange="importFile(this)"><button class="secondary" onclick="setPage('partners')">Operatör web sayfaları</button></div><p class="muted" style="font-size:12px">Kontrat listelerini CSV veya JSON dosyasından aktarabilirsin. İlk satırda otel, oda, operatör, tedarikçi, fiyat, indirim bitişi, geliş durumu ve web sitesi gibi sütun adları bulunabilir.</p></section>`}
 const cfg={
- contracts:{title:'Otel Kontratları',desc:'Fiyat, sorumlu tedarikçi ve kontrat geliş durumunu tek yerden takip et.',btn:'＋ Kontrat ekle',modal:'contract',arr:'contracts',search:'Otel, tedarikçi, operatör veya oda ara',headers:['Otel / Oda','Operatör / Tedarikçi','Fiyat','İndirim bitişi','Kontrat durumu','İşlem'],row:c=>`<td><b>${esc(c.hotel)}</b><br><span class="muted">${esc(c.room)}</span>${c.note?`<br><small class="muted">Not: ${esc(c.note)}</small>`:''}</td><td>${esc(c.operator)}<br><small class="muted">${esc(c.supplier)}</small></td><td>${money(c.price)}</td><td>${dateTR(c.discount)}</td><td><span class="pill ${c.received==='Geldi'?'':c.received==='Bekleniyor'?'warn':'bad'}">${esc(c.received)}</span><br><small class="muted">${esc(c.status)}</small></td>`},
+ contracts:{title:'Otel Kontratları',desc:'Fiyat, sorumlu tedarikçi ve kontrat geliş durumunu tek yerden takip et.',btn:'＋ Kontrat ekle',modal:'contract',arr:'contracts',search:'Otel, tedarikçi, operatör veya oda ara',headers:['Otel / Oda','Operatör / Tedarikçi','Fiyat','İndirim bitişi','Kontrat durumu','İşlem'],row:c=>`<td><b>${esc(c.hotel)}</b><br><span class="muted">${esc(c.room)}</span>${c.note?`<br><small class="muted">Not: ${esc(c.note)}</small>`:''}</td><td>${esc(c.operator)}<br><small class="muted">${esc(c.supplier)}</small></td><td>${money(c.price)}</td><td>${dateTR(c.discount)}</td><td><span class="pill ${['Geldi','Tamamlandı'].includes(c.received)?'':c.received==='Bekleniyor'?'warn':'bad'}">${esc(c.received)}</span><br><small class="muted">${esc(c.status)}</small></td>`},
  tasks:{title:'İş Takibi',desc:'Beklediğin işleri, sorumlu tedarikçiyi ve ilgili kontratı işaretle.',btn:'＋ İş ekle',modal:'task',arr:'tasks',search:'İş, tedarikçi veya kontrat ara',headers:['İş / Not','Son tarih','Sorumlu tedarikçi','İlgili kontrat','Durum','İşlem'],row:c=>`<td><b>${esc(c.title)}</b>${c.note?`<br><small class="muted">${esc(c.note)}</small>`:''}<br><span class="pill ${c.priority==='Yüksek'?'bad':''}">${esc(c.priority)}</span></td><td>${dateTR(c.due)}</td><td>${esc(c.supplier||'—')}</td><td>${esc(c.contract||'—')}</td><td><span class="pill ${c.status==='Tamamlandı'?'':c.status==='Bekleniyor'?'warn':'bad'}">${esc(c.status)}</span></td>`},
  partners:{title:'Operatörler & Tedarikçiler',desc:'Firma iletişim bilgileri ve web sayfalarını kaydet.',btn:'＋ Firma ekle',modal:'partner',arr:'partners',search:'Firma, tür veya e-posta ara',headers:['Firma','Tür','Web sayfası','İletişim','İşlem'],row:c=>`<td><b>${esc(c.name)}</b></td><td>${esc(c.type)}</td><td>${c.website?`<a class="link" target="_blank" rel="noopener" href="${esc(c.website)}">${esc(c.website)}</a>`:'—'}</td><td>${esc(c.contact||'—')}<br>${esc(c.phone||'')}</td>`},
  stopsales:{title:'Stop-sale Takibi',desc:'Satışa kapalı tarih aralıklarını ve durumlarını izle.',btn:'＋ Stop-sale ekle',modal:'stopsale',arr:'stopsales',search:'Otel veya tedarikçi ara',headers:['Otel / Oda','Tarih aralığı','Tedarikçi','Açıklama','Durum','İşlem'],row:c=>`<td><b>${esc(c.hotel)}</b><br>${esc(c.room)}</td><td>${dateTR(c.start)} – ${dateTR(c.end)}</td><td>${esc(c.supplier||'—')}</td><td>${esc(c.reason)}</td><td><span class="pill ${c.status==='Onaylandı'?'':c.status==='Bekliyor'?'warn':'bad'}">${esc(c.status)}</span></td>`},
@@ -174,7 +75,7 @@ function adminPage(){const ws=activeWorkspace();const canAdmin=currentUser&&curr
 <div class="notice"><strong>Gerçek kullanım için önemli güvenlik notu</strong><small>Bu sürümde kullanıcılar ve şifreler tarayıcı depolamasında tutulur. Bu, gerçek bir güvenli giriş sistemi değildir ve farklı telefonlar arasında senkronizasyon sağlamaz. Birden fazla kişi/cihazla güvenli kullanım için sunucu, veritabanı, parola hashleme ve erişim kuralları ayrıca kurulmalıdır.</small></div>`}
 function render(){initNav();$('#main').innerHTML=page==='dashboard'?dashboard():page==='notes'?notesPage():page==='admin'?adminPage():tablePage(page);if($('#workspaceLabel'))$('#workspaceLabel').textContent=activeWorkspace().name}
 const schemas={
- contract:{title:'Kontrat',arr:'contracts',fields:[['hotel','Otel adı','text',1],['room','Oda tipi','text',1],['operator','Operatör adı','text',1],['supplier','Sorumlu tedarikçi','text',1],['price','Gecelik fiyat (₺)','number',1],['discount','İndirim bitiş tarihi','date',0],['status','İç durum','select',1,['Aktif','Kontrol','Pasif']],['received','Kontrat geliş durumu','select',1,['Gelmedi','Bekleniyor','Geldi']],['website','Operatör web sayfası','url',0],['note','Not / açıklama','textarea',0]]},
+ contract:{title:'Kontrat',arr:'contracts',fields:[['hotel','Otel adı','text',1],['room','Oda tipi','text',1],['operator','Operatör adı','text',1],['supplier','Sorumlu tedarikçi','text',1],['price','Gecelik fiyat (₺)','number',1],['discount','İndirim bitiş tarihi','date',0],['status','İç durum','select',1,['Aktif','Kontrol','Pasif']],['received','Kontrat geliş durumu','select',1,['Gelmedi','Bekleniyor','Geldi','Tamamlandı']],['website','Operatör web sayfası','url',0],['note','Not / açıklama','textarea',0]]},
  task:{title:'İş',arr:'tasks',fields:[['title','İş başlığı','text',1],['due','Son tarih','date',0],['priority','Öncelik','select',1,['Normal','Yüksek','Acil']],['status','İş durumu','select',1,['Bekliyor','Devam ediyor','Tamamlandı']],['supplier','Sorumlu tedarikçi','text',0],['contract','İlgili otel / kontrat','text',0],['note','Not / açıklama','textarea',0]]},
  note:{title:'Not',arr:'notes',fields:[['title','Başlık','text',1],['body','Not içeriği','textarea',1],['related','İlgili otel / kişi / konu','text',0],['date','Tarih','date',0]]},
  partner:{title:'Operatör / tedarikçi',arr:'partners',fields:[['name','Firma adı','text',1],['type','Firma türü','select',1,['Tur operatörü','Tedarikçi','Diğer']],['website','Web sayfası URL','url',0],['contact','E-posta','email',0],['phone','Telefon','tel',0],['note','Not','textarea',0]]},
